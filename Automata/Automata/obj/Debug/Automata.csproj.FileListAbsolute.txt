@@ -1,0 +1,10 @@
+C:\Users\samue\Documents\VSprojects\Automata\Automata\bin\Debug\Automata.exe.config
+C:\Users\samue\Documents\VSprojects\Automata\Automata\bin\Debug\Automata.exe
+C:\Users\samue\Documents\VSprojects\Automata\Automata\bin\Debug\Automata.pdb
+C:\Users\samue\Documents\VSprojects\Automata\Automata\obj\Debug\Automata.csprojAssemblyReference.cache
+C:\Users\samue\Documents\VSprojects\Automata\Automata\obj\Debug\Automata.Properties.Resources.resources
+C:\Users\samue\Documents\VSprojects\Automata\Automata\obj\Debug\Automata.csproj.GenerateResource.cache
+C:\Users\samue\Documents\VSprojects\Automata\Automata\obj\Debug\Automata.csproj.CoreCompileInputs.cache
+C:\Users\samue\Documents\VSprojects\Automata\Automata\obj\Debug\Automata.exe
+C:\Users\samue\Documents\VSprojects\Automata\Automata\obj\Debug\Automata.pdb
+C:\Users\samue\Documents\VSprojects\Automata\Automata\obj\Debug\Automata.MainInterface.resources
