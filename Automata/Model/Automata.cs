@@ -31,75 +31,24 @@ namespace Automata.Model
             }
             matrix.Add(lineArray);
         }
-        /*
-        public void deleteRedundant() {
-            for (int i =0; i<matrix.Count; i++) {
-                for (int j = 0; j < matrix.ElementAt(i).Count; j++) {
-                    string matrixValue = matrix.ElementAt(i).ElementAt(j);
-                    if (!checkexist(matrixValue))
-                    {
-
-                    }
-                    else {
-                        passed.Add(matrixValue);
-                    }
-                }
-            }
-        }
-        */
-        /*
-        public void deleteRedundant()
+        
+        public void deleteUnconnectedLines()
         {
-            Boolean flag;
-            for (int i = 0; i < matrix.Count; i++)
-            {
-                flag = false;
-                for (int j = 0; j < matrix.ElementAt(i).Count && flag==false; j++)
-                {
-                    string matrixValue = matrix.ElementAt(i).ElementAt(j);
-                 
-                    if (j==0 && checkexist(matrixValue)==false && passed.Count > 0) {
-                        flag = true;
-                        j = matrix.ElementAt(i).Count;
-                        break;
-                    }
-                    if (checkexist(matrixValue) == false)
-                    {
-                        passed.Add(matrixValue);
-                    }
-
-
-                }
-            }
-        }
-
-
-        public Boolean checkexist(string elementToCheck) {
-            Boolean value = false;
-            for (int i = 0; i<passed.Count; i++) {
-                if (passed.ElementAt(i).Equals(elementToCheck)) {
-                    value = true;
-                }
-            }
-            return value;
-        }
-        */
-        public void deleteLines()
-        {
+            
             int count = 0;
-            for (int k=0; k<count; k++) {
+            //se realiza este procedimiento hasta que no haya ningun cambio para asegurarse que 
+            while (count > 0) {
+                //se utiliza este count para verificar si hubo algun cambio
+                count = 0;
                 List<string> connected = new List<string>();
                 connected.Add(matrix.ElementAt(0).ElementAt(0));
-                for (int i = 0; i < matrix.Count; i++)
-                {
-                    if (isInList(matrix.ElementAt(i).ElementAt(0), connected))
-                    {
-                        for (int j = 0; j < matrix.ElementAt(i).Count; j++)
-                        {
-                            //A,B,1,F,3,D,4
+                for (int i = 0; i < matrix.Count; i++){
+                    if (isInList(matrix.ElementAt(i).ElementAt(0), connected)){
+                        int lineLength = (matrix.ElementAt(i).Count - 1) / 2;
+                        for (int j = 0; j < lineLength; j++){
+                            
                             int aux = (j * 2) + 1;
-                            if (!isInList(matrix.ElementAt(i).ElementAt(aux), connected))
-                            {
+                            if (!isInList(matrix.ElementAt(i).ElementAt(aux), connected)){
                                 connected.Add(matrix.ElementAt(i).ElementAt(aux));
                                 count++;
                             }
