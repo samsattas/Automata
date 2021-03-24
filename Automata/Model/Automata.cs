@@ -9,7 +9,7 @@ namespace Automata.Model
     class Automata
     {
         public List<List<string>> matrix;
-        public List<string> passed;
+        public List<string> connected;
         public Automata()
         {
             matrix = new List<List<string>>();
@@ -40,15 +40,15 @@ namespace Automata.Model
             while (count > 0) {
                 //se utiliza este count para verificar si hubo algun cambio
                 count = 0;
-                List<string> connected = new List<string>();
+                //List<string> connected = new List<string>();
                 connected.Add(matrix.ElementAt(0).ElementAt(0));
                 for (int i = 0; i < matrix.Count; i++){
-                    if (isInList(matrix.ElementAt(i).ElementAt(0), connected)){
+                    if (isInList(matrix.ElementAt(i).ElementAt(0))){
                         int lineLength = (matrix.ElementAt(i).Count - 1) / 2;
                         for (int j = 0; j < lineLength; j++){
                             
                             int aux = (j * 2) + 1;
-                            if (!isInList(matrix.ElementAt(i).ElementAt(aux), connected)){
+                            if (!isInList(matrix.ElementAt(i).ElementAt(aux))){
                                 connected.Add(matrix.ElementAt(i).ElementAt(aux));
                                 count++;
                             }
@@ -56,9 +56,15 @@ namespace Automata.Model
                     }
                 }
             }
-            
+            for (int i = 0; i < matrix.Count; i++) {
+                string nodeToDelete = matrix.ElementAt(i).ElementAt(0);
+                if (isInList(nodeToDelete)==false) {
+                    matrix.RemoveAt(i);
+                }
+               
+            }   
         }
-        public Boolean isInList(string st, List<string> connected)
+        public Boolean isInList(string st)
         {
             Boolean isIn = false;
             for (int i = 0; i < matrix.Count; i++)
