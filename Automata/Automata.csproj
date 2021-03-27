@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Automata.cs" />
+    <Compile Include="Model\Automatax.cs" />
     <Compile Include="UI\MainInterface.cs">
       <SubType>Form</SubType>
     </Compile>
